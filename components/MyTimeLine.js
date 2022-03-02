@@ -13,8 +13,6 @@ import Filter7Icon from '@mui/icons-material/Filter7';
 import SentimentSatisfiedAltIcon from '@mui/icons-material/SentimentSatisfiedAlt';
 import { green } from '@mui/material/colors';
 
-import dayjs from 'dayjs'
-
 export default function MyTimeLine({ dt, after72hrs, day7, day14 }) {
   return (
     <Timeline position="left">
