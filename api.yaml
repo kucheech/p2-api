@@ -1,0 +1,42 @@
+openapi: 3.0.0
+info:
+  title: Protocol 2 timelines API
+  version: v1
+servers:
+- url: https://p2-api.vercel.app/api
+paths:
+  /timeline:
+    get:
+      description: get a set of timelines based on the input
+      parameters:
+      - in: query
+        name: dateline
+        schema:
+          type: string
+          # format: date-time
+          example: '2022-02-24T10:47:38.780Z'
+        required: false
+      responses:
+        200:
+          description: return a set of timelines based on the input
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  dt:
+                    type: string
+                    description: Day 1 datetime
+                    example: '2022-04-24T10:53:12.508Z'
+                  after72hrs:
+                    type: string
+                    description: datetime for after 72 hours
+                    example: '2022-04-27T10:53:12.508Z'
+                  day7:
+                    type: string
+                    description: Day 7 12pm datetime
+                    example: '2022-04-30T12:00:12.508Z'
+                  day14:
+                    type: string
+                    description: Day 14 12pm datetime
+                    example: '2022-05-07T12:00:12.508Z'
