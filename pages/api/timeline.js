@@ -5,8 +5,8 @@ import dayjs from "dayjs"
 export const getTimeLine = datetime => {
   const dt = dayjs(datetime)
   const after72hrs = dt.add(72, 'h')
-  const day7 = dt.add(6, 'd').hour(12).minute(0)
-  const day14 = dt.add(13, 'd').hour(12).minute(0)
+  const day7 = dt.add(6, 'd').hour(12).minute(0).millisecond(0)
+  const day14 = dt.add(13, 'd').hour(12).minute(0).millisecond(0)
 
   return { dt, after72hrs, day7, day14 }
 }
